@@ -1,0 +1,653 @@
+/* ==========================================================================
+   Shared styles for the auth screen, admin desk, doctor desk and patient
+   appointment list. Reuses the portal tokens from index.css.
+   ========================================================================== */
+
+/* ------------------------------ sign in ------------------------------ */
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 260px, var(--color-bg-base) 260px);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(10, 37, 64, 0.18);
+  padding: 28px;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.auth-brand h1 {
+  margin: 0;
+  font-size: 19px;
+  color: var(--color-primary);
+}
+
+.auth-brand p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.auth-brand .hospital-seal {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  border-radius: 3px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.auth-tabs button {
+  flex: 1;
+  padding: 9px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-text-body);
+  border-radius: 3px;
+}
+
+.auth-tabs button.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-form label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-top: 8px;
+}
+
+.auth-form input {
+  padding: 9px 11px;
+  font-size: 14px;
+  border: 1px solid var(--color-border-dark);
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: var(--color-text-main);
+}
+
+.auth-error {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  font-size: 13px;
+  background-color: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+  color: var(--color-danger);
+  border-radius: 3px;
+}
+
+.btn-primary-wide {
+  margin-top: 16px;
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent-hover);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-primary-wide:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-primary-wide:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-demo {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--color-border-dark);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-demo strong {
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.auth-demo small {
+  width: 100%;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.demo-chip {
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+  border: 1px solid #bae6fd;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* --------------------------- staff desks ---------------------------- */
+.staff-shell {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.staff-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.staff-header h2 {
+  margin: 4px 0;
+  font-size: 23px;
+  color: var(--color-primary);
+}
+
+.staff-header p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.staff-quick-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+
+.staff-quick-action input {
+  width: 66px;
+  padding: 6px 8px;
+  border: 1px solid var(--color-border-dark);
+  border-radius: 3px;
+}
+
+.staff-quick-action button,
+.inline-form button[type='submit'],
+.inline-form button:not(.btn-soft):not(.btn-cancel-appt) {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent-hover);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.staff-quick-action button:disabled,
+.inline-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.staff-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.staff-tabs button {
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  background: none;
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-body);
+  cursor: pointer;
+}
+
+.staff-tabs button.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+.staff-tabs.tight {
+  border-bottom: none;
+}
+
+.panel-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.panel-card h3 {
+  margin: 0 0 14px;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.panel-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.stat-grid.compact {
+  grid-template-columns: repeat(3, minmax(96px, 1fr));
+  gap: 8px;
+}
+
+.stat-grid .stat-box {
+  text-align: left;
+  min-width: 0;
+}
+
+/* ------------------------------ forms ------------------------------- */
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+}
+
+.inline-form label,
+.stacked-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.inline-form label.grow {
+  flex: 1 1 200px;
+}
+
+.inline-form input,
+.inline-form select,
+.stacked-form input {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid var(--color-border-dark);
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: var(--color-text-main);
+}
+
+.stacked-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.stacked-form .btn-primary-wide {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
+.btn-soft {
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.btn-soft.highlight {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent-hover);
+  color: #ffffff;
+}
+
+.btn-soft:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --------------------------- doctor slots --------------------------- */
+.day-group {
+  margin-bottom: 18px;
+}
+
+.day-group h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 5px;
+}
+
+.day-group h4 small {
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.slot-card {
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border-dark);
+  border-radius: 3px;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slot-card.booked {
+  border-left-color: var(--color-success);
+}
+
+.slot-card.available {
+  border-left-color: var(--color-accent);
+}
+
+.slot-card.blocked {
+  border-left-color: var(--color-danger);
+  background-color: #fcfcfd;
+}
+
+.slot-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-text-main);
+}
+
+.status-chip.available {
+  background-color: var(--color-badge-bg);
+  border: 1px solid #bae6fd;
+  color: var(--color-badge-text);
+}
+
+.status-chip.completed {
+  background-color: var(--color-badge-bg);
+  border: 1px solid #bae6fd;
+  color: var(--color-badge-text);
+}
+
+.status-chip.no-show {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+
+.status-chip.blocked,
+.status-chip.cancelled {
+  background-color: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+  color: var(--color-danger);
+}
+
+.slot-patient {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  color: var(--color-text-body);
+}
+
+.slot-patient em {
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.slot-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.roster-grid h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--color-primary);
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--color-text-body);
+}
+
+.plain-list li {
+  margin-bottom: 4px;
+}
+
+/* ----------------------- patient appointments ----------------------- */
+.appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-success);
+  border-radius: 3px;
+  padding: 16px;
+}
+
+.appointment-row.cancelled,
+.appointment-row.cancelled_by_doctor {
+  border-left-color: var(--color-danger);
+}
+
+.appointment-row.completed {
+  border-left-color: var(--color-badge-text);
+}
+
+.appointment-row.no_show {
+  border-left-color: #94a3b8;
+}
+
+.appointment-sub.muted {
+  color: #64748b;
+}
+
+.appointment-token {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.appointment-main h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.appointment-sub {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: var(--color-text-body);
+}
+
+.appointment-alert {
+  margin: 8px 0 0;
+  padding: 7px 10px;
+  font-size: 12px;
+  background-color: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+  color: var(--color-danger);
+  border-radius: 3px;
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.reschedule-box {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-accent);
+  border-radius: 3px;
+}
+
+.reschedule-box h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  color: var(--color-primary);
+}
+
+/* ------------------------- session top bar -------------------------- */
+.session-bar {
+  background-color: var(--color-primary-light);
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.session-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.session-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.role-chip {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: var(--color-primary);
+}
+
+.btn-signout {
+  padding: 4px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.btn-signout:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 720px) {
+  .staff-header,
+  .appointment-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .staff-shell {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------------------
+# Secrets. The repo is public: never commit a real .env.
+# backend/.env.example is the template that IS committed.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+
+# ---------------------------------------------------------------------------
+# Runtime data. The SQLite database holds patient names, emails and phone
+# numbers, and the mail log holds the message bodies, so neither belongs here.
+# Both are recreated on first start (schema, demo accounts and three weeks of
+# slots are seeded automatically).
+# ---------------------------------------------------------------------------
+backend/data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+sent_emails.log
+*.log
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+venv/
+.venv/
+env/
+ENV/
+
+# Whisper / torch model downloads, if they ever land in the tree
+*.pt
+*.onnx
+
+# ---------------------------------------------------------------------------
+# Node / Vite frontend
+# ---------------------------------------------------------------------------
+node_modules/
+dist/
+dist-ssr/
+build/
+.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Generated analysis cache (understand-anything knowledge graph)
+# ---------------------------------------------------------------------------
+.ua/
+
+# ---------------------------------------------------------------------------
+# Editor / OS noise
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------------------------------------------------------------------------
+# Office crash-recovery copies, e.g. "MediVoc_Presentation [Autosaved].pptx".
+# The brackets must be escaped: unescaped, [Autosaved] is a character class
+# matching any one of those letters, which ignores nearly every path.
+# ---------------------------------------------------------------------------
+*\[Autosaved\]*
+~$*
+*.tmp
