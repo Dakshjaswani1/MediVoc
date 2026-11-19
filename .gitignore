@@ -78,5 +78,20 @@ desktop.ini
 # matching any one of those letters, which ignores nearly every path.
 # ---------------------------------------------------------------------------
 *\[Autosaved\]*
+
+# ---------------------------------------------------------------------------
+# Report, slide deck and design assets. These stay on the local machine: the
+# repo carries the project source only.
+#
+# The PNG rule is anchored with a leading slash so it covers the screenshots
+# sitting at the repo root and leaves the frontend's own assets alone
+# (frontend/src/assets, frontend/public).
+# ---------------------------------------------------------------------------
+*.pptx
+*.docx
+*.pdf
+diagrams/
+/*.png
+/ppt_text.md
 ~$*
 *.tmp
